@@ -1,33 +1,20 @@
 import sys
 from usage import Usage
-
-class Main(object):
-    def __init__(self):
-        self.actions = [
-            {"arg" : "l", "desc" : "Lists all the tasks"},
-            {"arg" : "a", "desc" : "Adds a new task"},
-            {"arg" : "r", "desc" : "Removes an task"},
-            {"arg" : "c", "desc" : "Completes an task"},]
-
+from list_items import ToDoModel
 
 def start():
-    arguments = sys.argv[1:]
+    argument = sys.argv[1:]
+    list_item = ToDoModel()
     usage = Usage()
-    if not arguments:
+    if not argument:
         usage.usage_info()
-
-start()            
-
-
-    # def add_item():
-    #     pass
+    elif argument[0] == "-l":
+        list_item.list_todo()
+    elif argument[0] == "-a":
+        list_item.add(sys.argv[2])
+    elif argument[0] == "-r":
+        list_item.remove(sys.argv[2])
+    elif argument[0] == "-c":
+        list_item.list_todo
         
-    # def list_items():
-    #     pass
-
-    # def remove_item():
-    #     pass
-
-    # def complete_item():
-    #     pass
-
+start()            
