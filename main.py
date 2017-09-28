@@ -1,6 +1,6 @@
 import sys
 from usage import Usage
-from list_items import ToDoModel
+from app_model import ToDoModel
 
 def start():
     argument = sys.argv[1:]
