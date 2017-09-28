@@ -1,0 +1,3 @@
+0 sleep
+0 eat
+0 repeat

@@ -10,7 +10,10 @@ class ToDoModel(object):
             if self.todo_list == []:
                 print("Have fun! There are no To Dos!")
             else:
-                print(self.todo_list)
+                indeces = 0
+                for item in self.todo_list:
+                    indeces += 1
+                    print(str(indeces) + " - " + str(item))
     
     def add(self, todo):
         with open("todos.txt", "a") as self.file:
@@ -18,7 +21,7 @@ class ToDoModel(object):
     
     def remove(self, index):
         with open("todos.txt", "w") as self.file:
-            del self.todo_list[int(argument[1]) - 1]
+            del self.todo_list[int([1]) - 1]
             self.todo_list.write(complete + task.description + "\n")
 
     
