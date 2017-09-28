@@ -10,10 +10,8 @@ class ToDoModel(object):
             if self.todo_list == []:
                 print("Have fun! There are no To Dos!")
             else:
-                indeces = 0
-                for item in self.todo_list:
-                    indeces += 1
-                    print(str(indeces) + " - " + str(item))
+                for i, self.todo_list in enumerate(self.todo_list):
+                    print(str(i+1) + " - " + str(self.todo_list))
     
     def add(self, todo):
         with open("todos.txt", "a") as self.file:
@@ -21,8 +19,12 @@ class ToDoModel(object):
     
     def remove(self, index):
         with open("todos.txt", "w") as self.file:
-            del self.todo_list[int([1]) - 1]
-            self.todo_list.write(complete + task.description + "\n")
+            self.todo_list.remove(self.todo_list[int(index)-1])
+            self.file.write("0" + " " + todo + "\n" )
+    
+    def status(self, status):
+        self.todo_list[int(index)-1]["checked"] = True
+        self.write()
 
     
 
